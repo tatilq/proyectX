@@ -1,0 +1,11 @@
+node -v
+npm install nodemon -g
+	-instalamos globalmente luego vamos a la ruta del proyecto
+npm install express
+npm express -v
+	-se creea la carpeta node modules
+npm install socket.io   
+
+npm socket.io -v
+
+

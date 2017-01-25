@@ -1,0 +1,25 @@
+{
+  "name": "whatsapp",
+  "version": "1.0.0",
+  "description": "App de whatsapp",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Tatiana Limache Quispe",
+  "dependencies": {
+    "express": "3.10.10",
+    "socket.io": "3.10.10"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatilq/proyectX.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tatilq/proyectX/issues"
+  },
+  "homepage": "https://github.com/tatilq/proyectX#readme"
+}
