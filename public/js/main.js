@@ -38,3 +38,6 @@
 	{
 		socket.emit('identify', inputName.value);
 	}
+	function mostar{
+		console.log("hola");
+	}
