@@ -112,9 +112,26 @@ function onInputKeyUp(evt)
 	}
 }
 
-
-/**/
-
 //funcion que seleciona en toda la lista de chat
 var chatsList=document.getElementsByClassName("listaChat");
-console.log(chatsList);//tengo todos los chats
+var long = chats.children.length;
+//console.log(chatsList);//tengo todos los chats en li
+                         
+	chatsList[0].addEventListener('click',selectChat0);
+	chatsList[1].addEventListener('click',selectChat1);
+/*
+
+function selectChat0()
+{					
+}document.getElementById("chat").innerHTML="";
+	document.getElementById("chat").innerHTML='<div class="w-message w-message-in">'+
+	'<div class="w-message-text"> <h5 class="blue-1">Andrea Lamas</h5><p>Chicos han visto el nuevo corte de Aldo?</p><div class="time">11:12</div> </div></div>';
+	
+	//chat.style.display="none";
+
+function selectChat1()
+{
+	document.getElementById("chat").innerHTML="";
+	//chat.style.display="none";
+}
+*/

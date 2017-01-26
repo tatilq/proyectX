@@ -30,9 +30,9 @@
 	  					</div>
 	  				</header>
 	  				<div class="w-search icon-search">
-	  					<input type="text" placeholder="Buscar o empezar un chat nuevo" class="w-search-contacts">
+	  					<input type="text"  placeholder="Buscar o empezar un chat nuevo" onclick="if(this.placeholder=='Buscar o empezar un chat nuevo') this.placeholder=''" onblur="if(this.placeholder=='') this.placeholder='Buscar o empezar un chat nuevo'"   class="w-search-contacts">
 	  				</div>
-	  				<ul class="w-recent-chats">
+	  				<ul class="w-recent-chats" id="chats">
 	  					<li class="listaChat">
 		  					<div class="avatar">
 		  						<img src="image/logocodeacademy.png" alt="" class="wh-44">
@@ -123,6 +123,7 @@
 	  					</li>	 					
 	  				</ul>
 	  			</aside>
+	  			<!----------SECCION DE CADA CHAT-------->
 	  			<section class="col-md-8 w-contacts w-messages">
 	  				<header class="w-chat-messages clearfix">
 	  					<div class="avatar col-xs-9 w-chat-profile">
@@ -243,7 +244,7 @@
 	  						</div>  							  						
 	  					</div>
 	  				</section>
-
+					<!----FIN---->
 	  				<footer class="pane-footer w-write-message-footer">
 	  					<ul class="w-write-message-list clearfix">
 	  						<li class="col-xs-1 w-write-message-item icon-insert_emoticon w-write-message-icon"></li>
