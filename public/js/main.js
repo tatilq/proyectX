@@ -1,5 +1,4 @@
-
-	var socket;
+/*var socket;
 	var nombre;
 	var inputName;
 	window.onload = function(){
@@ -37,7 +36,29 @@
 	function updateName()
 	{
 		socket.emit('identify', inputName.value);
-	}
-	function mostar{
-		console.log("hola");
-	}
+	}*/
+
+function chat()
+{
+	this.people  = [];
+	this.messages = [];
+	this.chatAvatar ='';
+}
+function person(_name, _avatar)
+{
+	this.name = _name;
+	this.avatar = _avatar;
+}
+var tati = new  persona(tati,img);//eacion de un
+function whatsapp()
+{
+	this.chats = [];
+	this.activeChat = null;
+	this.searchChat = function(_keyword){
+	};
+	this.getchChatFromId = function(_chatId){};
+	this.drawChatList = function(_htmlTarget){};
+	this.drawMessageList = function(_chatToDraw, htmlTarget){};
+	this.sendChat = function(_message){};
+}
+

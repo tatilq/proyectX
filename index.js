@@ -11,6 +11,10 @@
 	io.sockets.on("conecction", function(socket){
 		console.log("Se ha concetado un nuevo cliente (puerto 3000)");
 	});*/
+
+
+	//validoo 
+	/*
 var http = require('http');
 var path = require('path');
 var socketio = require('socket.io');
@@ -46,8 +50,8 @@ io.on('connection', function(socket){
 	})
 });
 
-
-server.listen(8080,"localhost", function(){
+server.listen(443,"localhost", function(){
   var addr = server.address();
   console.log("Chat server listening at", addr.address + ":" + addr.port);
 });
+*/
