@@ -1,11 +1,6 @@
-//hora actual del sistema
-var d = new Date();
-
-var horaActual=d.getHours()+':'+d.getMinutes();
-
-
 /*FILTRO PARA CHATS*/
 var search = document.getElementById("search");
+search.id=""
 var chatsList=document.getElementsByClassName("listaChat");
     //food = document.getElementsByTagName("span"),
 var forEach = Array.prototype.forEach;
@@ -31,9 +26,10 @@ function Chat()
 	this.chatAvatar = '';
 }
 
-function Person(_name)
+function Person(_name, _dni)
 {
 	this.name = _name;
+	this.dni = _dni;
 	//this.avatar = _avatar;
 }
 function Message(_message, _sender)
@@ -45,6 +41,7 @@ function Message(_message, _sender)
 function Whatsapp()
 {
 	this.chats = [];
+	this.name = '';
 	this.selectedChat = null;
 	this.searchChat		= function(_keyword){};
 	this.getChatFromId	= function(_chatId){};
@@ -52,7 +49,7 @@ function Whatsapp()
 		var ulChatList = document.getElementById('chat-list');
 
 		for (var i in this.chats) {
-			console.log(this.chats[i].messages);
+			//console.log(this.chats[i].messages);
 			var htmlChatList = '<li class="listaChat"><div class="avatar ">' +
 					'<img src="' + this.chats[i].chatAvatar + '" alt="" class="wh-44">' +
 					'<h4 class="w-contact-name">' + this.chats[i].nombre +'</h4>' +
@@ -78,18 +75,22 @@ function Whatsapp()
 	this.getLastMessage = function(){
 		return this.selectedChat.messages[this.selectedChat.messages.length-1];
 	};
-	this.sendMessage	= function(_message, _in){
-		//var htmlMessageIn = '<div class="w-message w-message-out"><div class="w-message-text"><p>' + _message.message + '</p><div class="time">14:27</div></div></div>';
+	this.sendMessage	= function(_message, _in ){
+		var d = new Date();
+		var horaActual=d.getHours()+':'+d.getMinutes();
+		//var htmlMessageIn = '<div class="w-message w-message-in"><div class="w-message-text"><p>' + _message.message + '</p><div class="time">14:27</div></div></div>';
 		//persona que mand a el mensaje
-		var htmlMessageOut = '<div class="w-message w-message-in"><div class="w-message-text"><p>' + _message.message + '</p><div class="time" >'+horaActual+'</div></div></div>';
+		var htmlMessageOut = '<div class="w-message w-message-in"><div class="w-message-text"><h5>'+this.name+'</h5><p>' + _message.message + '</p><div class="time" >'+horaActual+'</div></div></div>';
 		var divChat = document.getElementById('chat');
 
 		this.selectedChat.messages.push(_message);
 
 		if(_in)
 		{
+			
 			divChat.innerHTML += htmlMessageIn;
 		}else{
+
 			divChat.innerHTML += htmlMessageOut;
 		}
 
@@ -119,9 +120,11 @@ wapp.selectedChat = chat;
 //console.log(wapp.getLastMessage().sender);
 */
 var wapp = new Whatsapp();
-
-var me = new Person('Gerson');
-var zare = new Person('Zare');
+wapp.name="tati";
+var me = new Person();
+me.name="sheyla";
+var zare = new Person();
+zare.name="zarela";
 var liset = new Person('Liset');
 
 //ceacion de chats
@@ -152,7 +155,7 @@ wapp.sendMessage(new Message('Hola', me));
 wapp.sendMessage(new Message('Tienes un peine?', liset));
 
 wapp.drawChatList();
-console.log(wapp.getLastMessage().sender);
+//console.log(wapp.getLastMessage().sender);
 
 
 
@@ -186,16 +189,14 @@ function onInputKeyUp(evt)
 	//console.log(evt.keyCode);
 	if(evt.keyCode == 13)
 	{
-		wapp.sendMessage(new Message(evt.target.value, zare));//manda mensajes con el obj tati d ela clase persona 
+		var d = new Date();
+		var horaActual=d.getHours()+':'+d.getMinutes();
+		wapp.sendMessage(new Message(evt.target.value, zare.name));//manda mensajes con el obj tati d ela clase persona 
 		mensaje.innerHTML=inputMessage.value;
 		hora.innerHTML=horaActual;//id hoa de hora en html
 		evt.target.value = '';
 	}
 }
-
-
-
-
 
 //funcion que seleciona en toda la lista de chat
 var chatsList=document.getElementsByClassName("listaChat");
@@ -214,7 +215,6 @@ function selectChat0()
 	 '</div></div><div class="w-message w-message-in"><div class="w-message-text"><h5 class="pink-1">Mariana Costa</h5>'+
 	'<p>¿Finalmente se corto?</p><div class="time">11:13</div></div></div><div class="w-message w-message-in"><div class="w-message-text">'+
 	'<h5 class="green-1">Maria Paula Rivarola</h5><p>Jajaja Sii finalmente se corto!!</p><div class="time">11:13</div></div>'+'</div>';
-
 }
 function selectChat1()
 {
@@ -253,7 +253,6 @@ function selectChat3()
 
 	document.getElementById("avatar").innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/en/5/55/Xbox_NXE_avatar.png" alt="" class="wh-44">'+
 	'<h4 class="w-contact-name">Liset</h4><p>Ult. vez hoy '+horaActual+' </p>';
-
 	wapp.selectedChat = chat2;
 
 	wapp.sendMessage(new Message('Hola', me));
