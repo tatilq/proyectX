@@ -15,7 +15,6 @@
 	  	<link href="css/queries.css" rel="stylesheet">
 	</head>
 	<body>
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	  	<div class="w-app">
 	  		<div class="container">
 	  			<aside class="col-md-4 w-contacts">
@@ -32,7 +31,7 @@
 	  				<div class="w-search icon-search">
 	  					<input type="text" id="search" placeholder="Buscar o empezar un chat nuevo" onclick="if(this.placeholder=='Buscar o empezar un chat nuevo') this.placeholder=''" onblur="if(this.placeholder=='') this.placeholder='Buscar o empezar un chat nuevo'"   class="w-search-contacts">
 	  				</div>
-	  				<ul class="w-recent-chats" id="chats">
+	  				<ul class="w-recent-chats" id="chat-list">
 	  					<li class="listaChat">
 		  					<div class="avatar">
 		  						<img src="image/logocodeacademy.png" alt="" class="wh-44">
@@ -49,84 +48,13 @@
 	  						</div>
 	  						<div class="time">11:25</div>
 	  					</li>
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/mariana.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Mariana Costa</h4>
-	  							<p class="w-last-message">El panel de speakers esta buanazo</p>
-	  						</div>
-							<div class="time">09:25</div>
-	  					</li>
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/anamaria.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Ana María Martinez Franklin</h4>
-	  							<p class="w-last-message">Pues dale chamo!</p>
-	  						</div>
-	  						<div class="time">Ayer</div>
-	  					</li>
-	  					<li class="listaChat">
-	  						<div class="avatar"> 
-	  							<img src="image/rodulfo.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Rodulfo Prieto</h4>
-	  							<p class="w-last-message">¿Cómo van las chicas?</p>
-	  						</div>
-	  						<div class="time">Martes</div>
-	  					</li>
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/andrea.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Andrea Lamas</h4>
-	  							<p class="w-last-message">Hoy me toca clases de canto, yee!</p>
-	  						</div>
-	  						<div class="time">Lunes</div>
-	  					</li>
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/mariapaula.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Maria Paula Rivarola</h4>
-	  							<p class="w-last-message">Wuju! esto me encanta!! en verdad!</p>
-	  						</div>
-	  						<div class="time">13/01/2016</div>
-	  					</li>
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/katy.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Katy Sanchez</h4>
-	  							<p class="w-last-message">No te preocupes, tengo el salón bajo control</p>
-	  						</div>
-	  						<div class="time">11/01/2016</div>
-	  					</li>
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/aldo.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Aldo Alfaro</h4>
-	  							<p class="w-last-message">Vao a comer?</p>
-	  						</div>
-	  						<div class="time">03/01/2016</div>
-	  					</li>	 
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/curricula.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Laboratoria Curricula</h4>
-	  							<p class="w-last-message">Gian: Ya está lista la unidad 2</p>
-	  						</div>
-	  						<div class="time">03/01/2016</div>
-	  					</li>	
-	  					<li class="listaChat">
-	  						<div class="avatar">
-	  							<img src="image/jose.jpg" alt="" class="wh-44">
-	  							<h4 class="w-contact-name">Jose L. Lee Rázuri</h4>
-	  							<p class="w-last-message">Estoy bajando con Aldo, vao a comer?</p>
-	  						</div>
-	  						<div class="time">03/01/2016</div>
-	  					</li>	 					
+	  							
 	  				</ul>
 	  			</aside>
 	  			<!----------SECCION DE CADA CHAT-------->
 	  			<section class="col-md-8 w-contacts w-messages">
 	  				<header class="w-chat-messages clearfix">
-	  					<div class="avatar col-xs-9 w-chat-profile">
+	  					<div class="avatar col-xs-9 w-chat-profile" id="avatar">
 	  						<img src="image/logocodeacademy.png" alt="">
 	  						<h4 class="w-contact-name">Laboratoria Perú</h4>
 	  						<ul class="w-users-messages">
