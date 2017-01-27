@@ -214,78 +214,7 @@ function selectChat0()
 	 '</div></div><div class="w-message w-message-in"><div class="w-message-text"><h5 class="pink-1">Mariana Costa</h5>'+
 	'<p>¿Finalmente se corto?</p><div class="time">11:13</div></div></div><div class="w-message w-message-in"><div class="w-message-text">'+
 	'<h5 class="green-1">Maria Paula Rivarola</h5><p>Jajaja Sii finalmente se corto!!</p><div class="time">11:13</div></div>'+'</div>';
-/*
-	  						<div class="w-message w-message-out">
-	  							<div class="w-message-text">
-	  								<p>Antes parecia mufasa jajajaja</p>
-	  								<div class="time">11:14</div>
-	  							</div>
-	  						</div>
 
-	  						<div class="w-message w-message-out">
-	  							<div class="w-message-text">
-	  								<p>Ahora si esta decente</p>
-	  								<div class="time">11:18</div>
-	  							</div>
-	  						</div>
-
-	  						<div class="w-message w-message-in">
-	  							<div class="w-message-text">
-	  								<h5 class="blue-1">Andrea Lamas</h5>
-	  								<p>¿Por qué se lo habrá cortado?</p>
-	  								<div class="time">11:20</div>
-	  							</div>
-	  						</div>
-
-	  						<div class="w-message w-message-in">
-	  							<div class="w-message-text">
-	  								<h5 class="yellow-1">Aldo Alfaro</h5>
-	  								<p>Ya ya ya, hacia mucho calor que más</p>
-	  								<div class="time">11:25</div>
-	  							</div>
-	  						</div>
-
-	  						<div class="w-message w-message-in">
-	  							<div class="w-message-text">
-	  								<h5 class="blue-1">Andrea Lamas</h5>
-	  								<p>Esta siguiendo los pasos de Juan Diego!</p>
-	  								<div class="time">11:30</div>
-	  							</div>
-	  						</div>
-	  						<div class="w-message w-message-in">
-	  							<div class="w-message-text">
-	  								<h5 class="green-1">Maria Paula Rivarola</h5>
-	  								<p>Nunca!!! Juan Diego es único</p>
-	  								<div class="time">11:31</div>
-	  							</div>
-	  						</div>
-
-	  						<div class="w-message w-message-out">
-	  							<div class="w-message-text">
-	  								<p>Jajajaja</p>
-	  								<div class="time">11:32</div>
-	  							</div>
-	  						</div>
-
-	  						<div class="w-message w-message-in">
-	  							<div class="w-message-text">
-	  								<h5 class="yellow-1">Aldo Alfaro</h5>
-	  								<p>Dale dale!</p>
-	  								<div class="time">14:25</div>
-	  							</div>
-	  						</div>
-	  						<div class="w-message w-message-out">
-	  							<div class="w-message-text">
-	  								<p>Jajaja</p>
-	  								<div class="time">14:26</div>
-	  							</div>
-	  						</div>
-	  						<div class="w-message w-message-out">
-	  							<div class="w-message-text">
-	  								<p>No se pique!!</p>
-	  								<div class="time">14:27</div>
-	  							</div>
-	  						</div>*/
 }
 function selectChat1()
 {
@@ -307,6 +236,11 @@ function selectChat1()
 function selectChat2()
 {
 	document.getElementById("chat").innerHTML="";
+	document.getElementById("avatar").innerHTML="";
+
+	document.getElementById("avatar").innerHTML = '<img src="https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/andrew.png" alt="" class="wh-44">'+
+	'<h4 class="w-contact-name">Rocio</h4><p>Ult. vez hoy '+horaActual+' </p>';
+
 	wapp.sendMessage(new Message('me prestas dinero?', me));
 	wapp.sendMessage(new Message('cuanto deseas?', zare));
 
@@ -315,6 +249,10 @@ function selectChat2()
 function selectChat3()
 {
 	document.getElementById("chat").innerHTML="";
+	document.getElementById("avatar").innerHTML="";
+
+	document.getElementById("avatar").innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/en/5/55/Xbox_NXE_avatar.png" alt="" class="wh-44">'+
+	'<h4 class="w-contact-name">Liset</h4><p>Ult. vez hoy '+horaActual+' </p>';
 
 	wapp.selectedChat = chat2;
 
