@@ -1,6 +1,25 @@
 //hora actual del sistema
 var d = new Date();
 var horaActual=d.getHours()+':'+d.getMinutes();
+
+/*FILTRO PARA CHATS*/
+var search = document.getElementById("search");
+var chatsList=document.getElementsByClassName("listaChat");
+    //food = document.getElementsByTagName("span"),
+var forEach = Array.prototype.forEach;
+
+search.addEventListener("keyup", function(e){
+    var choice = this.value;
+  
+    forEach.call(chatsList, function(f){
+        if (f.innerHTML.toLowerCase().search(choice.toLowerCase()) == -1 )
+            f.style.display = "none";        
+        else
+            f.style.display = "block";        
+    });
+}, false);
+//FIN DE FILTRO PARA CHATS+
+
 /****DEFINICION DE LAS CLASES CHAT, PERSON A.MESSAJE, WHATSSAP**/
 function Chat()
 {
@@ -65,7 +84,7 @@ function Whatsapp()
 //creamos las personas que mandaran mensajes
 var wapp = new Whatsapp();
 
-var tati = new Person('Tatiana');
+var isa = new Person('Isamar');
 //var zare = new Person('Zare');
 
 var chat = new Chat();
@@ -76,7 +95,7 @@ wapp.chats.push(chat);
 wapp.selectedChat = chat;
 
 //wapp.sendMessage(new Message('Hola', zare));
-console.log(tati); //la persona que manda el mensaje
+//console.log(tati); //la persona que manda el mensaje
 
 //wapp.sendMessage(new Message('Que tal?', tati)); //para establecer ya mensajes
 
@@ -96,21 +115,37 @@ function init()
 	divChat = document.getElementById('chat');//contenedor de chats
 	var time = document.getElementsByClassName('time');
 	//chatPanel = document.querySelector('.w-chat-panel');
-	console.log(time);
+	//console.log(time);
 	inputMessage.addEventListener('keyup', onInputKeyUp);
-}
 
+
+	var emojis= document.getElementById('emojis');
+	emojis.addEventListener('click', insertEmoji);
+}
+function insertEmoji(){
+	var listemojis= '<li><img class="emoji" src="image/beso.png"></li><li><img class="emoji" src="image/beso.png"></li> <li><img class="emoji" src="image/risa.png"></li><li><img class="emoji" src="image/lentes.png"></li';
+	var emojis= document.getElementById('listEmojis');
+	emojis.innerHTML= listemojis;
+}
 function onInputKeyUp(evt)
 {
 	//console.log(evt.keyCode);
 	if(evt.keyCode == 13)
 	{
-		wapp.sendMessage(new Message(evt.target.value, tati));//manda mensajes con el obj tati d ela clase persona 
+		wapp.sendMessage(new Message(evt.target.value, isa));//manda mensajes con el obj tati d ela clase persona 
 		mensaje.innerHTML=inputMessage.value;
 		hora.innerHTML=horaActual;//id hoa de hora en html
 		evt.target.value = '';
 	}
 }
+
+
+
+
+
+
+
+
 
 //funcion que seleciona en toda la lista de chat
 var chatsList=document.getElementsByClassName("listaChat");
@@ -119,19 +154,16 @@ var long = chats.children.length;
                          
 	chatsList[0].addEventListener('click',selectChat0);
 	chatsList[1].addEventListener('click',selectChat1);
-/*
+	chatsList[2].addEventListener('click',selectChat2);
+	chatsList[3].addEventListener('click',selectChat3);
+	chatsList[4].addEventListener('click',selectChat4);
 
 function selectChat0()
-{					
-}document.getElementById("chat").innerHTML="";
-	document.getElementById("chat").innerHTML='<div class="w-message w-message-in">'+
-	'<div class="w-message-text"> <h5 class="blue-1">Andrea Lamas</h5><p>Chicos han visto el nuevo corte de Aldo?</p><div class="time">11:12</div> </div></div>';
-	
-	//chat.style.display="none";
+{
 
+}
 function selectChat1()
 {
 	document.getElementById("chat").innerHTML="";
 	//chat.style.display="none";
 }
-*/
