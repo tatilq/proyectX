@@ -1,17 +1,5 @@
 /****DEFINICION DE LAS CLASES CHAT, PERSON A.MESSAJE, WHATSSAP****/
-function Chat()
-{
-	this.nombre = '';
-	this.people = [];
-	this.messages = [];
-	this.chatAvatar = '';
-}
-function Person(_name, _dni)
-{
-	this.name = _name;
-	this.dni = _dni;
-	//this.avatar = _avatar;
-}
+
 function Message(_message, _sender)
 {
 	this.message = _message;
@@ -132,17 +120,30 @@ function Whatsapp()
 	};
 }
 /****************INSTANCIACION DE OBJETOS*****************/
-
-//creamos las personas que mandaran mensajes
-var wapp = new Whatsapp();
-wapp.name="tati";
 var chatsList=document.getElementsByClassName("listaChat");
-wapp.searchChat(chatsList);
+function Chat()
+{
+	this.nombre = '';
+	this.people = [];
+	this.messages = [];
+	this.chatAvatar = '';
+}
+function Person(_name, _dni)
+{
+	this.name = _name;
+	this.dni = _dni;
+	//this.avatar = _avatar;
+}
 var me = new Person();
 me.name="sheyla";
 var zare = new Person();
 zare.name="zarela";
 var liset = new Person('Liset');
+//creamos las personas que mandaran mensajes
+var wapp = new Whatsapp();
+
+wapp.searchChat(chatsList);
+
 
 //ceacion de chats
 var chat = new Chat();
@@ -194,7 +195,7 @@ function onInputKeyUp(evt)
 	//console.log(evt.keyCode);
 	if(evt.keyCode == 13)
 	{
-		wapp.sendMessage(new Message(evt.target.value, zare.name));//manda mensajes con el obj tati d ela clase persona 
+		wapp.sendMessage(new Message(evt.target.value, zare));//manda mensajes con el obj tati d ela clase persona 
 		mensaje.innerHTML=inputMessage.value;
 		hora.innerHTML=wapp.getDateMessage();
 		evt.target.value = '';
